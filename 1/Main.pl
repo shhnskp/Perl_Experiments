@@ -33,8 +33,6 @@ my %ReviewSheets = ( code   => "code",
 					 test   => "test"
                     );
 
-my @FileName;;
-
 foreach my $Product (sort keys %ReviewSheets)
 {
   my $dir = getcwd;
@@ -42,7 +40,7 @@ foreach my $Product (sort keys %ReviewSheets)
   my $InputFiles = "$dir\\review\\";
   $InputFiles .= $ReviewSheets{$Product};
   opendir my $dir, $InputFiles or die "Cannot open directory: $!";
-  @FileName = readdir $dir;
+  my @FileName = readdir $dir;
   closedir $dir;
   foreach my $reviewsheet (@FileName)
   {
@@ -95,11 +93,11 @@ sub Check_Sheet
 
   if ($Flag == 1)
   {
-    print color("green"), "\n\nThe sheet$OpenFile is CLOSED!!!\n\n", color("reset");
+    print color("green"), "\n\nThe sheet$OpenFile is CLOSED!!!", color("reset");
   }
   else
   {
-    print color("red"), "\n\nThe sheet $OpenFile is OPEN!!!\n\n", color("reset");
+    print color("red"), "\n\nThe sheet $OpenFile is OPEN!!!", color("reset");
   }
 
   # $Workbook->SaveAs($OpenFile);
