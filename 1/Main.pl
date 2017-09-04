@@ -28,15 +28,31 @@ print"\n\n Make Sure All the Workbooks are saved.\n".
 
 <STDIN>;
 
-# My Experiment Inputs are placed in this location. Need to add this location
-# to ENV path
-my $dir = getcwd;
-$dir =~ s{/}{\\}g;
-my $InputFiles = "$dir\\Inputs\\";
-# The file in which I am working currently
-my $FileName = "Sample_1.xlsx";
+my %ReviewSheets = ( code   => "code",
+                     design => "design",
+					 test   => "test"
+                    );
 
-Check_Sheet($InputFiles, $FileName);
+my @FileName;;
+
+foreach my $Product (sort keys %ReviewSheets)
+{
+  my $dir = getcwd;
+  $dir =~ s{/}{\\}g;
+  my $InputFiles = "$dir\\review\\";
+  $InputFiles .= $ReviewSheets{$Product};
+  opendir my $dir, $InputFiles or die "Cannot open directory: $!";
+  @FileName = readdir $dir;
+  closedir $dir;
+  foreach my $reviewsheet (@FileName)
+  {
+    if(($reviewsheet ne ".") && ($reviewsheet ne ".."))
+	{
+	  $InputFiles.="\\";
+	  Check_Sheet($InputFiles, $reviewsheet);
+	}
+  }
+}
 
 ################################################################################
 # Function Name   : Check_Sheet                                                #
