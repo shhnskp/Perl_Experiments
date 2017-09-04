@@ -1,8 +1,8 @@
-####################################
-# REVIEW SHEET CHECKER FOR CLOSURE #
-# Version : 1.0                    #
-# Developed By: Shahanas K P       #
-####################################
+################################################################################
+#                   REVIEW SHEET CHECKER FOR CLOSURE                           #
+#                   Version : 1.0                                              #
+#                   Developed By: Shahanas K P                                 #
+################################################################################
 
 BEGIN
 {
@@ -39,9 +39,9 @@ my $FileName = "Sample_1.xlsx";
 Check_Sheet($InputFiles, $FileName);
 
 ################################################################################
-# Function Name: Check_Sheet                                                   #
+# Function Name   : Check_Sheet                                                #
 # Input Arguments : File Path and File Name.                                   #
-# Return value : None                                                          #
+# Return value    : None                                                       #
 # This Function will search for the status of review sheet in the Header sheet #
 ################################################################################
 sub Check_Sheet
