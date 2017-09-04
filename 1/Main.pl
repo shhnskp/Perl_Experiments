@@ -12,6 +12,7 @@ BEGIN
 use strict;
 use warnings;
 use Term::ANSIColor;
+use Cwd;
 # DELETE THIS USAGE ONCE THE PROJECT IS FINISHED
 use Data::Dumper;
 # Library for Applications
@@ -29,7 +30,9 @@ print"\n\n Make Sure All the Workbooks are saved.\n".
 
 # My Experiment Inputs are placed in this location. Need to add this location
 # to ENV path
-my $InputFiles = "E:\\Personal\\My_Experiments\\Perl\\In_Excel\\1\\Inputs\\";
+my $dir = getcwd;
+$dir =~ s{/}{\\}g;
+my $InputFiles = "$dir\\Inputs\\";
 # The file in which I am working currently
 my $FileName = "Sample_1.xlsx";
 
