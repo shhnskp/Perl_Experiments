@@ -1,0 +1,9 @@
+REVIEW SHEET CHECKER FOR CLOSURE:
+
+1. Search for Closed or Open in the Header Sheet from a Single Sheet given as input.
+2. Create a single hash for all the required review sheets and do the operation for the same.
+3. Check for the review comments status in Findings sheet of the workbooks.
+
+Extra Plans:
+1. The project shall be made as separate modules.
+2. It should be user friendly with maximum possible graphical interface.

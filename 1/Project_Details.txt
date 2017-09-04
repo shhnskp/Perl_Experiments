@@ -1,0 +1,5 @@
+REVIEW SHEET CHECKER FOR CLOSURE:
+
+1. This project is under development to check all the review sheets are in closed state for a module.
+2. This will check all the review sheets header sheet to make sure the review sheet is in closed state.
+3. As a secondary confirmation, this script will check the findings sheet as well to make sure that all comments are closed.(Cf, Cr, Cn)
